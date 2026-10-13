@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vista en móvil · Multiservicios Ben Fet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,sans-serif;background:#f4f4f1;color:#18181b;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 20px 40px}
+.top{width:100%;max-width:900px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.top a{color:#52525b;text-decoration:none;font-weight:600;font-size:14px}
+.top a:hover{color:#18181b}
+h1{font-size:20px;letter-spacing:-.02em}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:26px}
+.tabs button{font:600 14px Inter,sans-serif;padding:9px 16px;border-radius:999px;border:1px solid #e4e4e0;background:#fff;cursor:pointer;color:#52525b;transition:.15s}
+.tabs button:hover{color:#18181b}
+.tabs button.on{background:#18181b;border-color:#18181b;color:#fff}
+.phone{width:414px;max-width:100%;background:#18181b;border-radius:52px;padding:34px 12px 12px;box-shadow:0 40px 70px -30px rgba(0,0,0,.45);position:relative}
+.phone:before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:64px;height:6px;background:#3f3f46;border-radius:999px}
+.phone iframe{display:block;width:100%;height:min(780px,calc(100vh - 230px));min-height:520px;border:0;border-radius:8px 8px 40px 40px;background:#fff}
+.hint{margin-top:18px;font-size:14px;color:#71717a;text-align:center;max-width:420px}
+.hint a{color:#18181b;font-weight:600}
+</style>
+</head>
+<body>
+<div class="top"><a href="index.html">← Volver a las propuestas</a><h1>Así se ve en el móvil</h1><span style="width:150px"></span></div>
+<div class="tabs" id="tabs"></div>
+<div class="phone"><iframe id="frame" title="Vista en móvil"></iframe></div>
+<p class="hint">Puedes desplazarte dentro del teléfono como si fuera la pantalla de un móvil. <a id="full" href="#" target="_blank" rel="noopener">Abrir a pantalla completa →</a></p>
+<script>
+const P=[['01-fresco','Fresco'],['02-corporativo','Corporativo'],['03-calido','Cálido'],['04-minimal','Minimalista'],['05-vibrante','Vibrante'],['06-local','Local y cercano']];
+const tabs=document.getElementById('tabs'),frame=document.getElementById('frame'),full=document.getElementById('full');
+function current(){const h=location.hash.slice(1);return P.some(p=>p[0]===h)?h:P[0][0]}
+// En un móvil de verdad no hace falta el marco: se abre la propuesta directamente.
+if(window.innerWidth<520){location.replace(current()+'.html')}
+P.forEach(([id,name])=>{const b=document.createElement('button');b.textContent=name;b.dataset.id=id;b.onclick=()=>{location.hash=id};tabs.appendChild(b)});
+function show(){const id=current();frame.src=id+'.html';full.href=id+'.html';tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.id===id))}
+window.addEventListener('hashchange',show);show();
+</script>
+</body>
+</html>

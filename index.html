@@ -30,7 +30,10 @@ dt{font-weight:600;color:#71717a}
 dd{color:#27272a}
 .sw{display:flex;gap:6px;margin-top:16px}
 .sw i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.1)}
-.open{margin-top:auto;padding-top:16px;font-weight:600;font-size:14px}
+.open{margin-top:auto;padding-top:16px;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.mob{border:1px solid #d4d4d0;border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.15s}
+.mob:hover{background:#18181b;border-color:#18181b;color:#fff}
+@media(max-width:520px){.mob{display:none}}
 .next{background:#18181b;color:#fff;border-radius:18px;padding:36px 40px;margin-bottom:60px}
 .next h2{font-size:24px;margin:0 0 12px}
 .next ol{padding-left:20px;color:#d4d4d8;font-size:16px;display:grid;gap:6px}
@@ -49,22 +52,22 @@ footer{border-top:1px solid #e4e4e0;padding:28px 0 50px;color:#71717a;font-size:
 <div class="grid">
   <a class="card" target="_blank" rel="noopener" href="01-fresco.html"><div class="thumb"><iframe src="01-fresco.html" loading="lazy" tabindex="-1"></iframe></div><div class="body"><span class="n">CONCEPTO 01</span><h2>Fresco</h2><p>Limpio, luminoso y cercano. El formulario de presupuesto se ve desde el primer segundo.</p>
     <dl><div><dt>Transmite</dt><dd>Limpieza, frescura y facilidad.</dd></div><div><dt>Ideal si</dt><dd>La mayoría de tus clientes son particulares y quieres recibir muchas solicitudes de presupuesto.</dd></div><div><dt>Incluye</dt><dd>Formulario en la cabecera, seis servicios, tres pasos y opiniones.</dd></div></dl>
-    <div class="sw"><i style="background:#12b5cb"></i><i style="background:#d9f6f1"></i><i style="background:#ffd166"></i><i style="background:#0f2b3a"></i></div><div class="open">Ver propuesta →</div></div></a>
+    <div class="sw"><i style="background:#12b5cb"></i><i style="background:#d9f6f1"></i><i style="background:#ffd166"></i><i style="background:#0f2b3a"></i></div><div class="open"><span>Ver propuesta →</span><span class="mob" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('movil.html#01-fresco','_blank')">Ver en móvil</span></div></div></a>
   <a class="card" target="_blank" rel="noopener" href="02-corporativo.html"><div class="thumb"><iframe src="02-corporativo.html" loading="lazy" tabindex="-1"></iframe></div><div class="body"><span class="n">CONCEPTO 02</span><h2>Corporativo</h2><p>Serio y profesional, con cifras, sectores y certificaciones.</p>
     <dl><div><dt>Transmite</dt><dd>Solvencia, experiencia y control.</dd></div><div><dt>Ideal si</dt><dd>Quieres conseguir contratos con empresas, comunidades u organismos.</dd></div><div><dt>Incluye</dt><dd>Cifras clave, ocho sectores, método de trabajo, indicadores de calidad y formulario de propuesta.</dd></div></dl>
-    <div class="sw"><i style="background:#0a1f44"></i><i style="background:#2563eb"></i><i style="background:#38bdf8"></i><i style="background:#f5f7fb"></i></div><div class="open">Ver propuesta →</div></div></a>
+    <div class="sw"><i style="background:#0a1f44"></i><i style="background:#2563eb"></i><i style="background:#38bdf8"></i><i style="background:#f5f7fb"></i></div><div class="open"><span>Ver propuesta →</span><span class="mob" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('movil.html#02-corporativo','_blank')">Ver en móvil</span></div></div></a>
   <a class="card" target="_blank" rel="noopener" href="03-calido.html"><div class="thumb"><iframe src="03-calido.html" loading="lazy" tabindex="-1"></iframe></div><div class="body"><span class="n">CONCEPTO 03</span><h2>Cálido</h2><p>Tonos tierra y tipografía con carácter, con un ritmo más pausado.</p>
     <dl><div><dt>Transmite</dt><dd>Cuidado, calma y confianza.</dd></div><div><dt>Ideal si</dt><dd>Tu punto fuerte es el trato personal y que siempre va la misma persona a cada casa.</dd></div><div><dt>Incluye</dt><dd>Valores de la empresa, servicios en lista, compromisos y un testimonio destacado.</dd></div></dl>
-    <div class="sw"><i style="background:#1f3d2b"></i><i style="background:#c9d8c0"></i><i style="background:#c8744f"></i><i style="background:#f6f1e7"></i></div><div class="open">Ver propuesta →</div></div></a>
+    <div class="sw"><i style="background:#1f3d2b"></i><i style="background:#c9d8c0"></i><i style="background:#c8744f"></i><i style="background:#f6f1e7"></i></div><div class="open"><span>Ver propuesta →</span><span class="mob" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('movil.html#03-calido','_blank')">Ver en móvil</span></div></div></a>
   <a class="card" target="_blank" rel="noopener" href="04-minimal.html"><div class="thumb"><iframe src="04-minimal.html" loading="lazy" tabindex="-1"></iframe></div><div class="body"><span class="n">CONCEPTO 04</span><h2>Minimalista</h2><p>Limpio y ordenado, con toques de color y pequeños detalles gráficos.</p>
     <dl><div><dt>Transmite</dt><dd>Orden, claridad y modernidad.</dd></div><div><dt>Ideal si</dt><dd>Quieres una web sencilla de una sola página, válida para cualquier cliente y fácil de mantener.</dd></div><div><dt>Incluye</dt><dd>Cuatro servicios, cifras, tres pasos, una opinión y contacto.</dd></div></dl>
-    <div class="sw"><i style="background:#ffffff"></i><i style="background:#111111"></i><i style="background:#2f5bff"></i><i style="background:#ffd84d"></i></div><div class="open">Ver propuesta →</div></div></a>
+    <div class="sw"><i style="background:#ffffff"></i><i style="background:#111111"></i><i style="background:#2f5bff"></i><i style="background:#ffd84d"></i></div><div class="open"><span>Ver propuesta →</span><span class="mob" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('movil.html#04-minimal','_blank')">Ver en móvil</span></div></div></a>
   <a class="card" target="_blank" rel="noopener" href="05-vibrante.html"><div class="thumb"><iframe src="05-vibrante.html" loading="lazy" tabindex="-1"></iframe></div><div class="body"><span class="n">CONCEPTO 05</span><h2>Vibrante</h2><p>Atrevido, joven y con humor, al estilo de una app.</p>
     <dl><div><dt>Transmite</dt><dd>Energía, rapidez y desenfado.</dd></div><div><dt>Ideal si</dt><dd>Te diriges a un público joven y urbano, y quieres publicar precios y ofrecer reserva online.</dd></div><div><dt>Incluye</dt><dd>Servicios en mosaico, tres planes con precio, cuatro pasos y preguntas frecuentes.</dd></div></dl>
-    <div class="sw"><i style="background:#6c3bff"></i><i style="background:#d4ff3f"></i><i style="background:#ff7ac3"></i><i style="background:#17132b"></i></div><div class="open">Ver propuesta →</div></div></a>
+    <div class="sw"><i style="background:#6c3bff"></i><i style="background:#d4ff3f"></i><i style="background:#ff7ac3"></i><i style="background:#17132b"></i></div><div class="open"><span>Ver propuesta →</span><span class="mob" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('movil.html#05-vibrante','_blank')">Ver en móvil</span></div></div></a>
   <a class="card" target="_blank" rel="noopener" href="06-local.html"><div class="thumb"><iframe src="06-local.html" loading="lazy" tabindex="-1"></iframe></div><div class="body"><span class="n">CONCEPTO 06</span><h2>Local y cercano</h2><p>Aire de negocio de barrio, con ilustración propia y tono de tú a tú.</p>
     <dl><div><dt>Transmite</dt><dd>Cercanía y confianza de toda la vida.</dd></div><div><dt>Ideal si</dt><dd>Trabajas en una zona concreta y tus clientes llegan por recomendación, llamadas o WhatsApp.</dd></div><div><dt>Incluye</dt><dd>Quiénes somos, qué se limpia en cada estancia, calculadora orientativa, reseñas, zonas y botón de WhatsApp.</dd></div></dl>
-    <div class="sw"><i style="background:#1d5c63"></i><i style="background:#dcebe6"></i><i style="background:#f0b93a"></i><i style="background:#fcf4ee"></i></div><div class="open">Ver propuesta →</div></div></a>
+    <div class="sw"><i style="background:#1d5c63"></i><i style="background:#dcebe6"></i><i style="background:#f0b93a"></i><i style="background:#fcf4ee"></i></div><div class="open"><span>Ver propuesta →</span><span class="mob" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();window.open('movil.html#06-local','_blank')">Ver en móvil</span></div></div></a>
 </div>
 <div class="next">
   <h2>¿Y ahora qué?</h2>
@@ -74,7 +77,7 @@ footer{border-top:1px solid #e4e4e0;padding:28px 0 50px;color:#71717a;font-size:
     <li>Adapto el diseño elegido a tu marca y lo dejo listo para publicar.</li>
   </ol>
 </div>
-<footer>Todas las propuestas son adaptables a móvil. Contenido de muestra.</footer>
+<footer>Todas las propuestas se adaptan solas al móvil: si abres este enlace desde el teléfono, las verás ya en su versión móvil. Contenido de muestra.</footer>
 </div>
 </body>
 </html>
