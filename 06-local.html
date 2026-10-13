@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Limpiezas Lumina — Concepto 06 Local y cercano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2b2d;--muted:#667678;--teal:#1d5c63;--teal-d:#15464c;--mint:#dcebe6;--cream:#fcf4ee;--paper:#ffffff;--mustard:#f0b93a;--butter:#fbe8b4;--line:#f2e4da;--wa:#25d366;--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-weight:800;font-size:21px;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+.logo svg{width:34px;height:34px}
+.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
+.links a:hover{color:var(--teal)}
+.tel{font-weight:700;color:var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--teal);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;border:2px solid var(--teal);font-family:inherit;font-size:16px;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--teal-d);border-color:var(--teal-d)}
+.btn.out{background:transparent;color:var(--teal)}
+.btn.out:hover{background:var(--mint)}
+.btn svg{width:19px;height:19px;fill:currentColor}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:40px 0 90px}
+.hand{display:inline-block;background:var(--butter);padding:5px 14px;border-radius:8px;font-weight:700;font-size:14px;transform:rotate(-2deg)}
+h1{font-size:clamp(36px,5.2vw,60px);font-weight:800;line-height:1.06;letter-spacing:-.03em;margin:20px 0 18px}
+h1 em{font-style:normal;color:var(--teal);background:linear-gradient(transparent 66%,var(--butter) 66%)}
+.hero p{font-size:19px;color:var(--muted);max-width:470px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 26px}
+.mini{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--muted)}
+.mini b{color:#e0a800;letter-spacing:2px}
+.scene{position:relative}
+.scene svg{width:100%;height:auto;display:block}
+.note{position:absolute;left:-6px;bottom:26px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:14px;line-height:1.35;box-shadow:0 16px 30px -18px rgba(28,43,45,.4);transform:rotate(-3deg)}
+.note b{display:block;font-size:15px}
+section{padding:84px 0}
+.paper{background:var(--paper)}
+.k{font-size:14px;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(28px,3.8vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:8px 0 12px}
+.sub{color:var(--muted);max-width:540px}
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.about p+p{margin-top:14px}
+.about p{color:var(--muted)}
+.facts{display:grid;gap:14px}
+.fact{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:center;background:var(--cream);border-radius:18px;padding:18px 20px}
+.ic{width:54px;height:54px;border-radius:50%;background:var(--mint);display:grid;place-items:center}
+.ic svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fact b{display:block}
+.fact span{color:var(--muted);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.2s}
+.svc:hover{transform:translateY(-4px) rotate(-.5deg);border-color:var(--teal)}
+.svc .ic{margin-bottom:16px;background:var(--butter)}
+.svc h3{font-size:19px;font-weight:700}
+.svc p{color:var(--muted);font-size:15px;margin-top:4px}
+.inc{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0}
+.tabs button{font:inherit;font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;cursor:pointer;color:var(--ink);transition:.15s}
+.tabs button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.list{background:var(--cream);border-radius:var(--r);padding:30px 32px;list-style:none;display:grid;gap:14px;min-height:290px;align-content:start}
+.list li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.list li:before{content:"✓";width:26px;height:26px;border-radius:50%;background:var(--mustard);display:grid;place-items:center;font-size:13px;font-weight:800}
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.pair{border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;height:210px;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:6px solid var(--paper);box-shadow:0 14px 30px -20px rgba(28,43,45,.5)}
+.pair div{display:flex;align-items:flex-end;padding:12px}
+.pair .x{background:repeating-linear-gradient(45deg,#b7b1a4,#b7b1a4 8px,#a8a294 8px,#a8a294 16px);color:#fff}
+.pair .y{background:linear-gradient(135deg,#eef6f3,var(--mint));color:var(--teal)}
+.ba>div:nth-child(1) .pair{transform:rotate(-1.5deg)}.ba>div:nth-child(3) .pair{transform:rotate(1.5deg)}
+.cap{text-align:center;font-weight:600;margin-top:14px;font-size:15px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.rev{background:var(--cream);border-radius:var(--r);padding:26px}
+.rev .st{color:#e0a800;letter-spacing:2px}
+.rev p{margin:8px 0 14px;font-size:16px}
+.rev small{color:var(--muted);font-weight:600;font-size:14px}
+.zones{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{background:var(--paper);border:1px solid var(--line);padding:8px 15px;border-radius:999px;font-weight:600;font-size:14px}
+.map{height:300px;border-radius:28px;border:6px solid var(--paper);background:
+ radial-gradient(circle at 50% 50%,rgba(29,92,99,.2) 0 95px,transparent 96px),
+ linear-gradient(var(--line) 2px,transparent 2px) 0 0/100% 46px,
+ linear-gradient(90deg,var(--line) 2px,transparent 2px) 0 0/62px 100%,var(--cream);position:relative}
+.map:after{content:"";position:absolute;left:50%;top:50%;width:22px;height:22px;border-radius:50% 50% 50% 0;background:var(--teal);transform:translate(-50%,-100%) rotate(-45deg);box-shadow:inset 0 0 0 6px var(--teal),inset 0 0 0 11px #fff}
+.contact{background:var(--teal);color:#fff;border-radius:32px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact h2{margin-top:0}
+.contact p{color:#cfe2e0}
+.contact dl{margin-top:26px;display:grid;gap:12px;font-size:16px}
+.contact dt{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#a9cbc8;font-weight:700}
+form{background:var(--paper);color:var(--ink);border-radius:24px;padding:28px;display:grid;gap:12px}
+input,select,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1.5px solid var(--line);font:inherit;font-size:16px;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:transparent}
+textarea{resize:none}
+.calc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.calc .tabs{margin:0 0 24px}
+.lbl{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:8px}
+.lbl span:last-child{color:var(--teal);font-weight:700}
+input[type=range]{width:100%;padding:0;border:0;accent-color:var(--teal);margin-bottom:22px;background:none}
+.res{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--butter);border-radius:16px;padding:16px 22px}
+.res small{display:block;color:var(--muted);font-size:13px}
+.res b{font-size:32px;font-weight:800;color:var(--teal);white-space:nowrap}
+.calc .fine{font-size:13px;color:var(--muted);margin-top:14px}
+footer{padding:34px 0 90px;font-size:14px;color:var(--muted);text-align:center}
+.fab{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 26px -10px rgba(0,0,0,.45);z-index:20;transition:.2s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px;fill:#fff}
+@media(max-width:860px){.links,.tel{display:none}.hero,.about,.inc,.zones,.contact{grid-template-columns:1fr;gap:34px}.hero{padding:20px 0 60px}.grid{grid-template-columns:1fr 1fr}.ba,.revs{grid-template-columns:1fr}.contact{padding:30px}section{padding:58px 0}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.600 15.100L2 22l5-1.300A10 10 0 1012 2zm0 18.200a8.200 8.200 0 01-4.200-1.150l-.3-.18-3 .78.800-2.900-.200-.300A8.200 8.200 0 1112 20.200zm4.500-6.100c-.25-.12-1.450-.72-1.680-.800-.220-.080-.390-.120-.550.120-.160.250-.630.800-.770.960-.140.160-.280.180-.530.060a6.700 6.700 0 01-3.350-2.930c-.250-.430.250-.400.720-1.340.080-.160.040-.300-.020-.420-.060-.120-.550-1.330-.760-1.820-.200-.480-.400-.410-.550-.420h-.470a.900.900 0 00-.650.300 2.750 2.750 0 00-.860 2.040c0 1.200.880 2.370 1 2.530.120.160 1.720 2.630 4.170 3.690 1.550.670 2.150.720 2.930.610.470-.070 1.450-.590 1.650-1.160.200-.570.200-1.060.140-1.160-.060-.100-.220-.160-.470-.290z"/></symbol></svg>
+
+<div class="wrap">
+<nav>
+  <a class="logo" href="#"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#1d5c63"/><path d="M11 21l9-8 9 8v8H11z" fill="#faf5ea"/><path d="M27 8l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="#f0b93a"/></svg>Limpiezas Lumina</a>
+  <div class="links"><a href="#nosotros">Quiénes somos</a><a href="#servicios">Servicios</a><a href="#incluye">Qué incluye</a><a href="#precio">Precio</a><a href="#zonas">Zonas</a></div>
+  <a class="tel" href="tel:600000000">600 000 000</a>
+</nav>
+
+<div class="hero">
+  <div>
+    <span class="hand">Desde 2014 en tu barrio</span>
+    <h1>Tu casa limpia, por gente <em>de confianza</em>.</h1>
+    <p>Somos un equipo pequeño y de aquí. Te conocemos por tu nombre, venimos siempre las mismas y dejamos tu casa como si fuera la nuestra.</p>
+    <div class="cta"><a class="btn" href="#contacto">Pedir presupuesto gratis</a><a class="btn out" href="#"><svg><use href="#wa"/></svg>Escríbenos</a></div>
+    <div class="mini"><b>★★★★★</b><span>4,9 de media · 187 reseñas de vecinos en Google</span></div>
+  </div>
+  <div class="scene">
+    <svg viewBox="0 0 460 420" aria-hidden="true">
+      <path d="M60 210C40 110 130 30 240 34s190 70 180 190-110 170-210 160S76 300 60 210z" fill="#fbe8b4"/>
+      <rect x="150" y="80" width="170" height="150" rx="10" fill="#fffdf8" stroke="#1c2b2d" stroke-width="4"/>
+      <path d="M235 80v150M150 155h170" stroke="#1c2b2d" stroke-width="4"/>
+      <circle cx="285" cy="118" r="18" fill="#f0b93a"/>
+      <path d="M160 215c20-24 40-24 60 0" fill="none" stroke="#dcebe6" stroke-width="6" stroke-linecap="round"/>
+      <rect x="130" y="230" width="210" height="14" rx="5" fill="#1c2b2d"/>
+      <path d="M120 300h110l-12 78h-86z" fill="#1d5c63"/>
+      <path d="M122 300c0-34 106-34 106 0" fill="none" stroke="#1c2b2d" stroke-width="4"/>
+      <circle cx="150" cy="286" r="13" fill="#fffdf8" stroke="#1c2b2d" stroke-width="3"/>
+      <circle cx="176" cy="274" r="17" fill="#fffdf8" stroke="#1c2b2d" stroke-width="3"/>
+      <circle cx="202" cy="288" r="11" fill="#fffdf8" stroke="#1c2b2d" stroke-width="3"/>
+      <circle cx="222" cy="252" r="7" fill="#fffdf8" stroke="#1c2b2d" stroke-width="3"/>
+      <rect x="290" y="290" width="56" height="88" rx="10" fill="#dcebe6" stroke="#1c2b2d" stroke-width="4"/>
+      <path d="M304 290v-22h28v22M304 268h-22l-6 14h28M332 262h14" fill="none" stroke="#1c2b2d" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="302" y="318" width="32" height="26" rx="4" fill="#f0b93a"/>
+      <path d="M380 150l5 15 15 5-15 5-5 15-5-15-15-5 15-5zM96 120l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#1d5c63"/>
+      <path d="M90 380h290" stroke="#1c2b2d" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div class="note"><b>“¡Hasta el jueves, Carmen!”</b>Siempre el mismo equipo</div>
+  </div>
+</div>
+</div>
+
+<section class="paper" id="nosotros"><div class="wrap about">
+  <div>
+    <span class="k">Quiénes somos</span>
+    <h2>Una empresa pequeña, a propósito.</h2>
+    <p>Empezamos limpiando las casas de nuestros vecinos y así seguimos: sin centralitas, sin subcontratas y sin que cada semana venga alguien distinto.</p>
+    <p>Cuando llamas, te atiende quien luego va a tu casa. Y si un día algo no queda bien, nos lo dices y lo arreglamos.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c0-3.600 2.900-6 6.500-6s6.500 2.400 6.500 6M16 5a3.500 3.500 0 010 7M18 14c2.300.700 3.500 2.700 3.500 6"/></svg></div><div><b>Siempre las mismas personas</b><span>Conocen tu casa y cómo te gustan las cosas.</span></div></div>
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.500-3.200 8-8 9-4.800-1-8-4.500-8-9V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg></div><div><b>Asegurados y con contrato</b><span>Todo en regla, para tu tranquilidad y la nuestra.</span></div></div>
+    <div class="fact"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.300L20 9M20 4v5h-5M20 12a8 8 0 01-14 5.300L4 15M4 20v-5h5"/></svg></div><div><b>Si no quedas contento, volvemos</b><span>Sin coste y sin discusiones.</span></div></div>
+  </div>
+</div></section>
+
+<section id="servicios"><div class="wrap">
+  <span class="k">Servicios</span><h2>¿En qué te echamos una mano?</h2>
+  <p class="sub">Para particulares, comunidades y pequeños negocios de la zona.</p>
+  <div class="grid">
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div><h3>Casas y pisos</h3><p>Cada semana, cada quince días o cuando lo necesites.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.500 2.500M15.500 15.500L18 18M18 6l-2.500 2.500M8.500 15.500L6 18"/></svg></div><h3>Limpieza a fondo</h3><p>Cocina, baños, armarios y todos los rincones.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14M9 21v-5h6v5M9 10h.010M15 10h.010"/></svg></div><h3>Portales y comunidades</h3><p>Escaleras, rellanos, garajes y patios.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V5h8v3"/></svg></div><h3>Oficinas y locales</h3><p>Despachos, tiendas y consultas, antes de abrir.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg></div><h3>Cristales</h3><p>Ventanas, galerías y escaparates sin marcas.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div><h3>Fin de obra y mudanzas</h3><p>Para entrar a vivir o entregar las llaves.</p></div>
+  </div>
+</div></section>
+
+<section class="paper" id="incluye"><div class="wrap inc">
+  <div>
+    <span class="k">Qué incluye</span>
+    <h2>Sabes exactamente qué hacemos en cada visita.</h2>
+    <p class="sub">Elige una estancia para ver lo que limpiamos. Si quieres añadir o quitar algo, lo apuntamos en tu ficha.</p>
+    <div class="tabs" id="tabs"><button class="on" data-r="cocina">Cocina</button><button data-r="banos">Baños</button><button data-r="salon">Salón</button><button data-r="dormitorios">Dormitorios</button></div>
+  </div>
+  <ul class="list" id="list"></ul>
+</div></section>
+
+<section id="precio"><div class="wrap inc" style="align-items:center">
+  <div>
+    <span class="k">Precio orientativo</span>
+    <h2>¿Cuánto me costaría?</h2>
+    <p class="sub">Hazte una idea en diez segundos. Luego vemos tu casa y te damos un presupuesto cerrado, sin compromiso.</p>
+    <a class="btn out" href="#contacto" style="margin-top:24px">Pedir presupuesto exacto</a>
+  </div>
+  <div class="calc">
+    <div class="tabs" id="types"><button class="on" data-rate="15">Regular</button><button data-rate="19">A fondo</button><button data-rate="22">Fin de obra</button></div>
+    <div class="lbl"><span>Tamaño de la vivienda</span><span id="m2">80 m²</span></div>
+    <input type="range" id="size" min="40" max="200" step="10" value="80" aria-label="Tamaño de la vivienda en metros cuadrados">
+    <div class="res"><div><small>Estimación por visita</small><span id="hrs">3 horas · 1 persona</span></div><b id="price">45 €</b></div>
+    <p class="fine">Productos y desplazamiento incluidos. Precio aproximado.</p>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <span class="k">Nuestro trabajo</span><h2>Antes y después</h2>
+  <p class="sub">Trabajos reales del equipo. (Aquí irán las fotos del cliente.)</p>
+  <div class="ba">
+    <div><div class="pair"><div class="x">Antes</div><div class="y">Después</div></div><p class="cap">Cocina tras una reforma</p></div>
+    <div><div class="pair"><div class="x">Antes</div><div class="y">Después</div></div><p class="cap">Baño a fondo</p></div>
+    <div><div class="pair"><div class="x">Antes</div><div class="y">Después</div></div><p class="cap">Portal de comunidad</p></div>
+  </div>
+</div></section>
+
+<section class="paper"><div class="wrap">
+  <span class="k">Opiniones</span><h2>Lo que dicen los vecinos</h2>
+  <div class="revs">
+    <div class="rev"><div class="st">★★★★★</div><p>“Vienen cada jueves desde hace dos años. Serias, rápidas y de total confianza.”</p><small>Carmen · Limpieza semanal</small></div>
+    <div class="rev"><div class="st">★★★★★</div><p>“Les escribí un lunes y el miércoles ya tenía el piso listo para entregar las llaves.”</p><small>Andrés · Fin de alquiler</small></div>
+    <div class="rev"><div class="st">★★★★★</div><p>“Llevan la limpieza de nuestra comunidad y se nota muchísimo el cambio.”</p><small>Pilar · Presidenta de comunidad</small></div>
+  </div>
+</div></section>
+
+<section id="zonas"><div class="wrap zones">
+  <div><span class="k">Zonas</span><h2>¿Dónde trabajamos?</h2><p class="sub">Nos movemos por la ciudad y los pueblos de alrededor, sin cobrar desplazamiento.</p>
+    <div class="chips"><span>Centro</span><span>Zona Norte</span><span>Zona Sur</span><span>Ensanche</span><span>Barrio A</span><span>Barrio B</span><span>Municipio 1</span><span>Municipio 2</span><span>¿No ves el tuyo? Pregúntanos</span></div></div>
+  <div class="map"></div>
+</div></section>
+
+<section id="contacto" style="padding-top:0"><div class="wrap"><div class="contact">
+  <div>
+    <h2>Cuéntanos qué necesitas</h2>
+    <p>Te respondemos en el día con un presupuesto claro y sin compromiso.</p>
+    <dl>
+      <div><dt>Teléfono y WhatsApp</dt><dd>600 000 000</dd></div>
+      <div><dt>Horario</dt><dd>Lunes a sábado, de 8:00 a 20:00</dd></div>
+      <div><dt>Dónde estamos</dt><dd>Calle Ejemplo 12, Tu ciudad</dd></div>
+    </dl>
+  </div>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='¡Recibido! Te llamamos hoy ✓'">
+    <input placeholder="Tu nombre"><input type="tel" placeholder="Teléfono">
+    <select><option>Casa o piso</option><option>Limpieza a fondo</option><option>Comunidad</option><option>Oficina o local</option><option>Otra cosa</option></select>
+    <textarea rows="3" placeholder="Cuéntanos un poco (barrio, tamaño, cada cuánto…)"></textarea>
+    <button class="btn">Pedir presupuesto</button>
+  </form>
+</div></div></section>
+
+<footer>© 2026 Limpiezas Lumina · Nombre provisional · Calle Ejemplo 12, Tu ciudad</footer>
+<a class="fab" href="#" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+const rooms={
+  cocina:['Encimera, fregadero y grifería','Vitrocerámica y exterior de electrodomésticos','Frentes de armarios y azulejos','Microondas por dentro','Barrido y fregado del suelo','Sacamos la basura'],
+  banos:['Sanitarios desinfectados','Mampara, bañera o plato de ducha','Lavabo, grifería y espejos','Azulejos y juntas','Reposición de toallas y papel','Fregado del suelo'],
+  salon:['Polvo en muebles y estanterías','Aspirado de sofá y alfombras','Cristales y marcos por dentro','Rodapiés, puertas e interruptores','Aspirado y fregado del suelo'],
+  dormitorios:['Hacemos las camas o cambiamos sábanas','Polvo en mesillas y cómodas','Espejos y frentes de armario','Aspirado bajo la cama','Aspirado y fregado del suelo']
+};
+const list=document.getElementById('list'),tabs=document.querySelectorAll('#tabs button');
+function show(r){list.innerHTML=rooms[r].map(t=>'<li><span>'+t+'</span></li>').join('')}
+tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('on'));b.classList.add('on');show(b.dataset.r)}));
+show('cocina');
+const size=document.getElementById('size'),types=document.querySelectorAll('#types button');
+function calc(){
+  const rate=+document.querySelector('#types .on').dataset.rate,h=Math.max(2,Math.round(size.value/27));
+  document.getElementById('m2').textContent=size.value+' m²';
+  document.getElementById('hrs').textContent=h+' horas · '+(h>5?'2 personas':'1 persona');
+  document.getElementById('price').textContent=(h*rate)+' €';
+}
+size.addEventListener('input',calc);
+types.forEach(b=>b.addEventListener('click',()=>{types.forEach(x=>x.classList.remove('on'));b.classList.add('on');calc()}));
+calc();
+</script>
+</body>
+</html>

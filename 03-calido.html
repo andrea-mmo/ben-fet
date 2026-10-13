@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumina · Limpieza con mimo — Concepto 03 Cálido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6f1e7;--paper:#fbf8f1;--forest:#1f3d2b;--leaf:#4f7a52;--sage:#c9d8c0;--clay:#c8744f;--ink:#22302a;--muted:#6a766e;--line:#e2dccd}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;letter-spacing:-.015em;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.logo{font-family:Fraunces;font-size:26px;display:flex;gap:8px;align-items:center}
+.logo svg{width:26px;height:26px;fill:var(--leaf)}
+.links{display:flex;gap:34px;font-size:15px}
+.links a{border-bottom:1px solid transparent}
+.links a:hover{border-color:var(--forest)}
+.btn{display:inline-block;background:var(--forest);color:var(--cream);padding:14px 28px;border-radius:999px;font-weight:500;transition:.2s;border:0;font:inherit;cursor:pointer}
+.btn:hover{background:var(--leaf)}
+.btn.alt{background:transparent;color:var(--forest);border:1px solid var(--forest)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:50px 0 100px}
+.pill{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);font-weight:600}
+h1{font-size:clamp(42px,6vw,76px);margin:18px 0 22px}
+h1 i{color:var(--clay)}
+.hero p{font-size:18px;color:var(--muted);max-width:480px}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.art{position:relative;aspect-ratio:4/5;border-radius:240px 240px 24px 24px;background:linear-gradient(180deg,#dbe6d1,var(--sage));overflow:hidden}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.badge{position:absolute;left:-26px;bottom:50px;background:var(--paper);padding:16px 20px;border-radius:18px;box-shadow:0 20px 40px -20px rgba(31,61,43,.4);font-size:14px;max-width:210px}
+.badge b{font-family:Fraunces;font-size:26px;display:block;color:var(--forest);font-weight:500}
+.marquee{background:var(--forest);color:var(--sage);padding:16px 0;overflow:hidden;white-space:nowrap;font-family:Fraunces;font-style:italic;font-size:20px}
+.marquee span{display:inline-block;animation:m 30s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+section{padding:100px 0}
+h2{font-size:clamp(32px,4vw,50px)}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:56px;align-items:end}
+.intro p{color:var(--muted)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.val{background:var(--paper);border-radius:24px;padding:34px;border:1px solid var(--line)}
+.val em{font-family:Fraunces;font-size:44px;color:var(--sage);display:block;line-height:1;margin-bottom:20px;font-style:italic}
+.val h3{font-size:24px;margin-bottom:8px}
+.val p{color:var(--muted);font-size:15px}
+.svcs{background:var(--paper)}
+.svc{display:grid;grid-template-columns:70px 1fr 1.2fr auto;gap:24px;align-items:center;padding:28px 0;border-top:1px solid var(--line);transition:.2s}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc:hover{padding-left:14px;color:var(--leaf)}
+.svc small{color:var(--muted);font-size:14px}
+.svc h3{font-size:28px}
+.svc p{color:var(--muted);font-size:15px}
+.svc b{font-weight:500;white-space:nowrap}
+.promise{background:var(--forest);color:var(--cream);border-radius:32px;padding:70px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.promise p{color:var(--sage)}
+.ing{display:flex;flex-wrap:wrap;gap:10px}
+.ing span{border:1px solid rgba(201,216,192,.4);padding:9px 16px;border-radius:999px;font-size:14px}
+.ing span.no{text-decoration:line-through;opacity:.5}
+.quote{text-align:center;max-width:800px;margin:0 auto}
+.quote blockquote{font-family:Fraunces;font-size:clamp(24px,3vw,36px);line-height:1.3;font-style:italic}
+.quote cite{display:block;margin-top:22px;font-style:normal;color:var(--muted);font-size:15px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact form{display:grid;gap:14px}
+input,textarea{background:transparent;border:0;border-bottom:1px solid var(--forest);padding:14px 0;font:inherit;width:100%}
+input:focus,textarea:focus{outline:0;border-color:var(--clay)}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){.links{display:none}.hero,.intro,.vals,.promise,.contact{grid-template-columns:1fr}.svc{grid-template-columns:1fr;gap:6px}.promise{padding:36px}.badge{left:12px}section{padding:64px 0}.hero{padding-bottom:60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#"><svg viewBox="0 0 24 24"><path d="M20 3C10 3 4 8 4 15c0 2 .6 3.600 1.500 5C8 13 12 9 17 7c-4 3-7 7-9 14 8 1 13-5 12-18z"/></svg>Lumina</a>
+  <div class="links"><a href="#filosofia">Filosofía</a><a href="#servicios">Servicios</a><a href="#compromiso">Compromiso</a><a href="#contacto">Contacto</a></div>
+  <a class="btn" href="#contacto">Reservar</a>
+</nav>
+<div class="hero">
+  <div>
+    <span class="pill">Limpieza del hogar · Equipo de confianza</span>
+    <h1>Tu casa, cuidada <i>como la nuestra.</i></h1>
+    <p>Un equipo pequeño y estable que conoce tu casa, tus rutinas y tus manías. Limpiamos con calma, con detalle y con el cariño de quien cuida lo suyo.</p>
+    <div class="cta"><a class="btn" href="#contacto">Pide tu primera limpieza</a><a class="btn alt" href="#compromiso">Cómo trabajamos</a></div>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+      <circle cx="290" cy="130" r="60" fill="#f3e3b3" opacity=".8"/>
+      <path d="M200 500V250" stroke="#1f3d2b" stroke-width="4"/>
+      <path d="M200 380c-70-10-110-60-120-130 70 5 115 55 120 130z" fill="#4f7a52"/>
+      <path d="M200 330c70-10 110-60 120-130-70 5-115 55-120 130z" fill="#1f3d2b"/>
+      <path d="M200 270c-45-20-65-65-55-120 45 20 65 65 55 120z" fill="#6f9a6f"/>
+      <path d="M0 470c100-40 300-40 400 0v30H0z" fill="#1f3d2b" opacity=".25"/>
+    </svg>
+    <div class="badge"><b>10 años</b>cuidando hogares de la zona</div>
+  </div>
+</div>
+</div>
+
+<div class="marquee"><span>Siempre la misma persona · Puntualidad · Atención al detalle · Trato cercano · Sin permanencia · Equipo asegurado · Siempre la misma persona · Puntualidad · Atención al detalle · Trato cercano · Sin permanencia · Equipo asegurado · </span></div>
+
+<section id="filosofia"><div class="wrap">
+  <div class="intro"><h2>Abrir la puerta de casa es cuestión de confianza.</h2><p>Lo sabemos, y por eso trabajamos despacio y bien: las mismas personas, el mismo día, y una forma de hacer las cosas que no cambia de una semana a otra.</p></div>
+  <div class="vals">
+    <div class="val"><em>01</em><h3>Siempre la misma persona</h3><p>Conoce tu casa, sabe dónde va cada cosa y cómo te gusta. Nada de caras nuevas cada semana.</p></div>
+    <div class="val"><em>02</em><h3>El detalle importa</h3><p>Rodapiés, interruptores, detrás del sofá. Repasamos lo que no se ve a primera vista, sin que tengas que pedirlo.</p></div>
+    <div class="val"><em>03</em><h3>Personas cuidadas</h3><p>Equipo estable, con contrato y seguro. Quien cuida tu casa también merece que la cuiden.</p></div>
+  </div>
+</div></section>
+
+<section class="svcs" id="servicios"><div class="wrap">
+  <span class="pill">Servicios</span><h2 style="margin:12px 0 50px">Elige cómo te ayudamos</h2>
+  <div class="svc"><small>01</small><h3>Hogar al día</h3><p>Limpieza recurrente semanal o quincenal con tu persona de confianza.</p><b>desde 16 €/h</b></div>
+  <div class="svc"><small>02</small><h3>Puesta a punto</h3><p>Limpieza profunda de temporada: cocina, baños, armarios y textiles.</p><b>desde 140 €</b></div>
+  <div class="svc"><small>03</small><h3>Casa nueva</h3><p>Limpieza completa antes de una mudanza o después de una reforma.</p><b>desde 120 €</b></div>
+  <div class="svc"><small>04</small><h3>Pequeñas oficinas</h3><p>Despachos, consultas y estudios siempre listos para recibir.</p><b>a medida</b></div>
+</div></section>
+
+<section id="compromiso"><div class="wrap"><div class="promise">
+  <div><span class="pill" style="color:var(--sage)">Nuestro compromiso</span><h2 style="margin:12px 0 16px">Si algo no está bien, volvemos.</h2><p>Sin discusiones ni letra pequeña. Avísanos en 48 horas y lo repasamos sin coste. Así de sencillo.</p></div>
+  <div class="ing"><span>Presupuesto cerrado</span><span>Productos incluidos</span><span>Equipo asegurado</span><span>Sin permanencia</span><span>Cambios de fecha gratis</span><span>Llaves en custodia</span><span>Garantía de repaso</span></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap quote">
+  <blockquote>“Llevan tres años viniendo a casa y ya son parte de la familia. Llego y todo está como a mí me gusta.”</blockquote>
+  <cite>— Elena M., clienta desde 2023</cite>
+</div></section>
+
+<section class="svcs" id="contacto"><div class="wrap contact">
+  <div><span class="pill">Contacto</span><h2 style="margin:12px 0 18px">Hablemos de tu casa.</h2><p style="color:var(--muted)">Escríbenos y te respondemos en el día con una propuesta sin compromiso.</p><p style="margin-top:24px">hola@lumina.es<br>600 000 000<br>Lunes a viernes · 9:00 – 18:00</p></div>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Gracias, te escribimos pronto 🌿'">
+    <input placeholder="Tu nombre"><input type="email" placeholder="Email"><input placeholder="Código postal"><textarea rows="3" placeholder="Cuéntanos qué necesitas"></textarea>
+    <button class="btn" style="justify-self:start;margin-top:10px">Enviar mensaje</button>
+  </form>
+</div></section>
+<footer><div class="wrap"><span>© 2026 Lumina · Nombre provisional</span><span>Hecho con cariño</span></div></footer>
+</body>
+</html>

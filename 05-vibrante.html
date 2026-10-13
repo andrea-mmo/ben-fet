@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lumina! — Concepto 05 Vibrante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17132b;--violet:#6c3bff;--lime:#d4ff3f;--pink:#ff7ac3;--cream:#fff8ec;--sky:#bfe7ff;--b:2.5px solid var(--ink);--sh:6px 6px 0 var(--ink)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;font-size:17px}
+h1,h2,h3,.logo,.price{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-size:30px}
+.logo b{color:var(--violet)}
+.links{display:flex;gap:8px}
+.links a{padding:8px 16px;border-radius:999px;font-weight:500}
+.links a:hover{background:var(--ink);color:var(--cream)}
+.btn{display:inline-block;background:var(--lime);border:var(--b);box-shadow:var(--sh);padding:14px 26px;border-radius:14px;font-weight:600;transition:.15s;font:inherit;font-weight:600;cursor:pointer;color:var(--ink)}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.btn.v{background:var(--violet);color:#fff}
+.btn.w{background:#fff}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:40px 0 80px}
+h1{font-size:clamp(50px,8vw,104px)}
+h1 span{background:var(--violet);color:#fff;padding:0 .12em;border-radius:16px;display:inline-block;transform:rotate(-2deg)}
+h1 u{text-decoration:none;background:linear-gradient(transparent 62%,var(--lime) 62%)}
+.hero p{font-size:20px;max-width:480px;margin:26px 0 30px}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+.stack{position:relative;height:440px}
+.tile{position:absolute;border:var(--b);box-shadow:var(--sh);border-radius:26px;padding:24px;font-weight:600}
+.t1{background:var(--pink);width:240px;height:240px;right:0;top:0;transform:rotate(6deg);display:grid;place-items:center;font-size:110px}
+.t2{background:var(--sky);width:250px;left:0;top:120px;transform:rotate(-5deg)}
+.t2 small{display:block;font-weight:400;font-size:14px}
+.t2 strong{font-family:"Bricolage Grotesque";font-size:44px;display:block;line-height:1.1}
+.t3{background:#fff;right:20px;bottom:10px;width:270px;transform:rotate(-2deg);display:flex;gap:12px;align-items:center;font-size:15px}
+.t3 i{width:44px;height:44px;border-radius:50%;background:var(--lime);border:var(--b);flex:none;display:grid;place-items:center;font-style:normal}
+.ticker{background:var(--ink);color:var(--lime);padding:14px 0;overflow:hidden;white-space:nowrap;font-family:"Bricolage Grotesque";font-weight:700;font-size:22px;transform:rotate(-1deg);margin:0 -10px}
+.ticker span{display:inline-block;animation:t 25s linear infinite}
+@keyframes t{to{transform:translateX(-50%)}}
+section{padding:90px 0}
+h2{font-size:clamp(36px,5vw,64px);margin-bottom:14px}
+.sub{font-size:19px;max-width:540px;margin-bottom:44px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:18px}
+.box{border:var(--b);border-radius:26px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;transition:.15s;background:#fff}
+.box:hover{box-shadow:var(--sh);transform:translate(-3px,-3px)}
+.box h3{font-size:26px}
+.box p{font-size:15px}
+.box .e{font-size:34px}
+.a{grid-column:span 2;grid-row:span 2;background:var(--violet);color:#fff}
+.a h3{font-size:44px}
+.b{background:var(--lime)}.c{background:var(--pink)}.d{grid-column:span 2;background:var(--sky)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:end}
+.plan{background:#fff;border:var(--b);border-radius:28px;padding:32px;position:relative}
+.plan.hot{background:var(--ink);color:var(--cream);padding-top:50px;box-shadow:8px 8px 0 var(--violet)}
+.plan.hot .flag{position:absolute;top:-16px;left:28px;background:var(--lime);color:var(--ink);border:var(--b);padding:5px 14px;border-radius:999px;font-weight:600;font-size:13px}
+.plan h3{font-size:24px}
+.price{font-size:60px;margin:16px 0 4px}
+.price small{font-size:18px;font-family:Outfit;font-weight:500;letter-spacing:0}
+.plan ul{list-style:none;padding:0;margin:22px 0 28px}
+.plan li{padding:7px 0}
+.plan li:before{content:"✦ ";color:var(--violet)}
+.plan.hot li:before{color:var(--lime)}
+.plan .btn{width:100%;text-align:center}
+.how{background:var(--violet);color:#fff;border-radius:40px;margin:0 16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:rgba(255,255,255,.12);border-radius:22px;padding:26px}
+.step b{font-family:"Bricolage Grotesque";font-size:54px;color:var(--lime);display:block;line-height:1}
+.step h3{font-size:22px;margin:14px 0 6px}
+.step p{font-size:15px;opacity:.85}
+.faq{max-width:780px}
+details{border:var(--b);border-radius:18px;padding:20px 24px;margin-bottom:12px;background:#fff}
+details[open]{background:var(--lime)}
+summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;font-size:18px}
+summary:after{content:"+";font-size:24px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin-top:12px}
+.end{text-align:center;background:var(--lime);border:var(--b);border-radius:40px;padding:80px 24px;box-shadow:var(--sh)}
+.end h2{font-size:clamp(40px,7vw,88px);margin-bottom:28px}
+footer{padding:34px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.links{display:none}.hero,.plans{grid-template-columns:1fr}.stack{height:400px}.bento{grid-template-columns:1fr 1fr;grid-auto-rows:auto}.a,.d{grid-column:span 2}.steps{grid-template-columns:1fr 1fr}section{padding:60px 0}.how{margin:0}}
+@media(max-width:520px){.bento,.steps{grid-template-columns:1fr}.a,.d{grid-column:auto}.t2{width:200px}.t1{width:180px;height:180px;font-size:80px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#">lumina<b>!</b></a>
+  <div class="links"><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#como">Cómo va</a><a href="#faq">Dudas</a></div>
+  <a class="btn" href="#planes">Reservar ya</a>
+</nav>
+<div class="hero">
+  <div>
+    <h1>Limpiar es un <span>rollo.</span> <u>Lo hacemos</u> nosotros.</h1>
+    <p>Reserva tu limpieza en 60 segundos desde el móvil. Sin llamadas, sin esperas, sin letra pequeña.</p>
+    <div class="cta"><a class="btn v" href="#planes">Reservar en 60 s →</a><a class="btn w" href="#como">¿Cómo funciona?</a></div>
+  </div>
+  <div class="stack">
+    <div class="tile t1">✨</div>
+    <div class="tile t2"><small>Valoración media</small><strong>4,9/5</strong><small>en +2.300 reseñas</small></div>
+    <div class="tile t3"><i>✓</i><span>Tu limpieza del jueves está confirmada 🎉</span></div>
+  </div>
+</div>
+</div>
+
+<div class="ticker"><span>PISOS ✦ OFICINAS ✦ AIRBNB ✦ FIN DE OBRA ✦ CRISTALES ✦ MUDANZAS ✦ LOCALES ✦ PISOS ✦ OFICINAS ✦ AIRBNB ✦ FIN DE OBRA ✦ CRISTALES ✦ MUDANZAS ✦ LOCALES ✦ </span></div>
+
+<section id="servicios"><div class="wrap">
+  <h2>¿Qué limpiamos?</h2><p class="sub">Básicamente todo. Elige lo tuyo y nosotros llevamos el resto.</p>
+  <div class="bento">
+    <div class="box a"><span class="e">🏠</span><div><h3>Tu casa, cada semana</h3><p>La misma persona, el mismo día, productos incluidos. Pausa o cancela cuando quieras.</p></div></div>
+    <div class="box b"><span class="e">🧽</span><div><h3>A fondo</h3><p>Para cuando hace falta de verdad.</p></div></div>
+    <div class="box c"><span class="e">🔑</span><div><h3>Airbnb</h3><p>Entre huésped y huésped.</p></div></div>
+    <div class="box d"><span class="e">💼</span><div><h3>Oficinas y locales</h3><p>Antes de abrir o después de cerrar. Tú ni te enteras.</p></div></div>
+    <div class="box"><span class="e">📦</span><div><h3>Mudanzas</h3><p>Entra o sal con todo limpio.</p></div></div>
+    <div class="box"><span class="e">🪟</span><div><h3>Cristales</h3><p>Sin una sola marca.</p></div></div>
+    <div class="box b" style="grid-column:span 2"><span class="e">🛠️</span><div><h3>Fin de obra</h3><p>Adiós al polvo de la reforma en un solo día.</p></div></div>
+  </div>
+</div></section>
+
+<section id="planes" style="padding-top:20px"><div class="wrap">
+  <h2>Precios claritos</h2><p class="sub">Lo que ves es lo que pagas. Productos y desplazamiento incluidos.</p>
+  <div class="plans">
+    <div class="plan"><h3>Puntual</h3><div class="price">18€<small>/hora</small></div><p>Para una vez y ya.</p><ul><li>Mínimo 3 horas</li><li>Productos incluidos</li><li>Reserva con 24 h</li></ul><a class="btn w" href="#">Elegir puntual</a></div>
+    <div class="plan hot"><span class="flag">El favorito ⭐</span><h3>Semanal</h3><div class="price">14€<small>/hora</small></div><p>Tu casa siempre lista.</p><ul><li>Misma persona siempre</li><li>Cambios de fecha gratis</li><li>Garantía de repetición</li><li>Sin permanencia</li></ul><a class="btn" href="#">Elegir semanal</a></div>
+    <div class="plan"><h3>Quincenal</h3><div class="price">16€<small>/hora</small></div><p>El equilibrio perfecto.</p><ul><li>Misma persona siempre</li><li>Productos incluidos</li><li>Sin permanencia</li></ul><a class="btn w" href="#">Elegir quincenal</a></div>
+  </div>
+</div></section>
+
+<section class="how" id="como"><div class="wrap">
+  <h2>Así de fácil</h2><p class="sub">Cuatro pasos y a otra cosa.</p>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Elige</h3><p>Servicio, horas y frecuencia.</p></div>
+    <div class="step"><b>2</b><h3>Reserva</h3><p>Día y hora desde el móvil.</p></div>
+    <div class="step"><b>3</b><h3>Relájate</h3><p>Llegamos puntuales y con todo.</p></div>
+    <div class="step"><b>4</b><h3>Valora</h3><p>¿No quedó perfecto? Volvemos gratis.</p></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Dudas rápidas</h2>
+  <div class="faq" style="margin-top:36px">
+    <details open><summary>¿Tengo que estar en casa?</summary><p>No hace falta. Puedes dejarnos las llaves o darnos acceso; todo el equipo está asegurado y verificado.</p></details>
+    <details><summary>¿Traéis vosotros los productos?</summary><p>Sí, todo incluido en el precio. Si prefieres que usemos los tuyos, dínoslo al reservar.</p></details>
+    <details><summary>¿Puedo cancelar o cambiar la fecha?</summary><p>Claro, gratis hasta 24 horas antes del servicio.</p></details>
+    <details><summary>¿Y si no quedo contento?</summary><p>Avísanos en 48 horas y volvemos a repasarlo sin coste.</p></details>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="end">
+  <h2>¿Lo dejamos brillando?</h2>
+  <a class="btn v" href="#planes">Reservar mi limpieza →</a>
+</div></div></section>
+<footer><div class="wrap"><span>© 2026 lumina! · Nombre provisional</span><span>hola@lumina.es · WhatsApp 600 000 000</span></div></footer>
+</body>
+</html>
