@@ -81,22 +81,23 @@ form .full{grid-column:1/-1}
 form button{border:0;cursor:pointer;font:inherit;font-weight:600}
 footer{background:#06142e;color:#8496b8;font-size:13px;padding:26px 0}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width:900px){.links,.logo small{display:none}nav .btn{padding:10px 16px;font-size:14px;white-space:nowrap}.stats{grid-template-columns:1fr 1fr;transform:translateY(30%)}.stat{border-bottom:1px solid var(--line)}.sectors{grid-template-columns:1fr 1fr}.head,.split{grid-template-columns:1fr;gap:30px}.logos{grid-template-columns:repeat(3,1fr)}.after-hero{padding-top:200px}section{padding:70px 0}form{grid-template-columns:1fr}}
+@media(max-width:900px){.links,.logo small{display:none}nav .btn{padding:10px 16px;font-size:14px;white-space:nowrap}.stats{grid-template-columns:1fr 1fr;transform:translateY(30%)}.stat{border-bottom:1px solid var(--line)}.sectors{grid-template-columns:repeat(2,minmax(0,1fr))}.head,.split{grid-template-columns:1fr;gap:30px}.logos{grid-template-columns:repeat(3,1fr)}.after-hero{padding-top:200px}section{padding:70px 0}form{grid-template-columns:1fr}}
+@media(max-width:560px){.sectors{grid-template-columns:1fr}.sector{min-height:0}}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap"><span>Servicio 24/7 para empresas · Cobertura provincial</span><span>T. 900 000 000 · correo@ejemplo.com</span></div></div>
 <header><div class="wrap"><nav>
   <a class="logo" href="#"><i></i>Ben Fet <small>Multiservicios</small></a>
-  <div class="links"><a href="#sectores">Sectores</a><a href="#metodo">Método</a><a href="#clientes">Clientes</a><a href="#contacto">Contacto</a></div>
+  <div class="links"><a href="#sectores">Servicios</a><a href="#metodo">Método</a><a href="#clientes">Clientes</a><a href="#contacto">Contacto</a></div>
   <a class="btn" href="#contacto">Solicitar propuesta</a>
 </nav></div></header>
 
 <div class="hero"><div class="wrap">
-  <span class="kicker">Limpieza profesional para empresas</span>
+  <span class="kicker">Limpieza y mantenimiento profesional</span>
   <h1>Instalaciones impecables. Operaciones sin interrupciones.</h1>
-  <p>Gestionamos la limpieza y el mantenimiento de oficinas, comunidades, naves y centros sanitarios con equipos propios, supervisión continua e indicadores medibles.</p>
-  <div class="cta"><a class="btn" href="#contacto">Solicitar auditoría gratuita</a><a class="btn line" href="#sectores">Ver sectores</a></div>
+  <p>Gestionamos la limpieza y el mantenimiento de comunidades, oficinas, parkings, piscinas y pisos turísticos con equipos propios, supervisión continua e indicadores medibles.</p>
+  <div class="cta"><a class="btn" href="#contacto">Solicitar auditoría gratuita</a><a class="btn line" href="#sectores">Ver servicios</a></div>
   <div class="stats">
     <div class="stat"><div class="num">15+</div><span>años de experiencia</span></div>
     <div class="stat"><div class="num">320</div><span>centros gestionados</span></div>
@@ -106,16 +107,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </div></div>
 
 <section class="after-hero" id="sectores"><div class="wrap">
-  <div class="head"><div><span class="kicker" style="color:var(--blue)">Sectores</span><h2 style="margin-top:12px">Un protocolo específico para cada tipo de instalación</h2></div><p>Cada sector tiene sus normativas, horarios y riesgos. Diseñamos un plan a medida y asignamos un responsable de cuenta único.</p></div>
+  <div class="head"><div><span class="kicker" style="color:var(--blue)">Servicios</span><h2 style="margin-top:12px">Un protocolo específico para cada tipo de instalación</h2></div><p>Cada espacio tiene sus necesidades, horarios y riesgos. Diseñamos un plan a medida y asignamos un responsable de cuenta único.</p></div>
   <div class="sectors">
-    <div class="sector"><b>01</b><h3>Oficinas</h3><p>Limpieza diaria fuera de horario, puestos de trabajo, salas y zonas comunes.</p><u>Saber más →</u></div>
-    <div class="sector"><b>02</b><h3>Comunidades</h3><p>Portales, escaleras, garajes y jardines con partes de trabajo digitales.</p><u>Saber más →</u></div>
-    <div class="sector"><b>03</b><h3>Industria y logística</h3><p>Naves, almacenes y maquinaria con equipos de limpieza industrial.</p><u>Saber más →</u></div>
-    <div class="sector"><b>04</b><h3>Sanitario</h3><p>Clínicas y consultas con protocolos de desinfección certificados.</p><u>Saber más →</u></div>
-    <div class="sector"><b>05</b><h3>Retail y hostelería</h3><p>Locales, restaurantes y hoteles siempre listos para abrir.</p><u>Saber más →</u></div>
-    <div class="sector"><b>06</b><h3>Centros educativos</h3><p>Colegios y academias con productos seguros y refuerzos estacionales.</p><u>Saber más →</u></div>
-    <div class="sector"><b>07</b><h3>Cristales y fachadas</h3><p>Trabajos en altura con plataformas y técnicos homologados.</p><u>Saber más →</u></div>
-    <div class="sector"><b>08</b><h3>Servicios especiales</h3><p>Fin de obra, desinfecciones, abrillantados y tratamientos de suelos.</p><u>Saber más →</u></div>
+    <div class="sector"><b>01</b><h3>Oficinas y locales</h3><p>Limpieza diaria fuera de horario, puestos de trabajo, salas y zonas comunes.</p><u>Saber más →</u></div>
+    <div class="sector"><b>02</b><h3>Comunidades</h3><p>Portales, escaleras y zonas comunes con partes de trabajo digitales.</p><u>Saber más →</u></div>
+    <div class="sector"><b>03</b><h3>Parkings y garajes</h3><p>Barrido, fregado mecanizado y retirada de residuos en parkings.</p><u>Saber más →</u></div>
+    <div class="sector"><b>04</b><h3>Pisos turísticos</h3><p>Limpieza entre estancias, entrega de llaves y recepción de huéspedes.</p><u>Saber más →</u></div>
+    <div class="sector"><b>05</b><h3>Piscinas</h3><p>Mantenimiento de piscinas comunitarias y particulares.</p><u>Saber más →</u></div>
+    <div class="sector"><b>06</b><h3>Fachadas con grúa</h3><p>Limpieza de fachadas en altura con grúa y personal formado.</p><u>Saber más →</u></div>
+    <div class="sector"><b>07</b><h3>Pulido de suelos</h3><p>Pulido, abrillantado y tratamiento de mármol, terrazo y otros suelos.</p><u>Saber más →</u></div>
+    <div class="sector"><b>08</b><h3>Mantenimiento</h3><p>Pequeñas reparaciones y fontanería con respuesta rápida.</p><u>Saber más →</u></div>
   </div>
 </div></section>
 
@@ -158,7 +159,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     <div><label>Empresa</label><input placeholder="Razón social"></div>
     <div><label>Email</label><input type="email" placeholder="nombre@empresa.com"></div>
     <div><label>Teléfono</label><input type="tel" placeholder="600 000 000"></div>
-    <div class="full"><label>Tipo de instalación</label><select><option>Oficinas</option><option>Comunidad de propietarios</option><option>Nave industrial</option><option>Centro sanitario</option><option>Otro</option></select></div>
+    <div class="full"><label>Tipo de servicio</label><select><option>Comunidad de propietarios</option><option>Oficinas o locales</option><option>Parking o garaje</option><option>Piso turístico</option><option>Piscina</option><option>Fachada</option><option>Otro</option></select></div>
     <div class="full"><label>Mensaje</label><textarea rows="3" placeholder="Superficie aproximada, frecuencia deseada…"></textarea></div>
     <button class="btn full">Enviar solicitud</button>
   </form>

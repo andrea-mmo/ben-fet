@@ -30,7 +30,7 @@ h1{font-size:20px;letter-spacing:-.02em}
 <div class="phone"><iframe id="frame" title="Vista en móvil"></iframe></div>
 <p class="hint">Puedes desplazarte dentro del teléfono como si fuera la pantalla de un móvil. <a id="full" href="#" target="_blank" rel="noopener">Abrir a pantalla completa →</a></p>
 <script>
-const P=[['01-fresco','Fresco'],['02-corporativo','Corporativo'],['03-calido','Cálido'],['04-minimal','Minimalista'],['05-vibrante','Vibrante'],['06-local','Local y cercano']];
+const P=[['01-fresco','Fresco'],['02-corporativo','Corporativo'],['03-calido','Cálido'],['04-minimal','Minimalista'],['05-vibrante','Vibrante'],['06-local','Local y cercano'],['07-neutro','Neutro']];
 const tabs=document.getElementById('tabs'),frame=document.getElementById('frame'),full=document.getElementById('full');
 function current(){const h=location.hash.slice(1);return P.some(p=>p[0]===h)?h:P[0][0]}
 // En un móvil de verdad no hace falta el marco: se abre la propuesta directamente.
