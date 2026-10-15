@@ -29,10 +29,8 @@ h1{font-size:clamp(42px,6vw,76px);margin:18px 0 22px}
 h1 i{color:var(--clay)}
 .hero p{font-size:18px;color:var(--muted);max-width:480px}
 .cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
-.art{position:relative;aspect-ratio:4/5;border-radius:240px 240px 24px 24px;background:linear-gradient(180deg,#dbe6d1,var(--sage));overflow:hidden}
-.art svg{position:absolute;inset:0;width:100%;height:100%}
-.badge{position:absolute;left:-26px;bottom:50px;background:var(--paper);padding:16px 20px;border-radius:18px;box-shadow:0 20px 40px -20px rgba(31,61,43,.4);font-size:14px;max-width:210px}
-.badge b{font-family:Fraunces;font-size:26px;display:block;color:var(--forest);font-weight:500}
+.art{position:relative;aspect-ratio:4/5;border-radius:240px 240px 24px 24px;background:linear-gradient(180deg,#dbe6d1,var(--sage))}
+.art svg{position:absolute;inset:0;width:100%;height:100%;clip-path:inset(0 round 240px 240px 24px 24px)}
 .marquee{background:var(--forest);color:var(--sage);padding:16px 0;overflow:hidden;white-space:nowrap;font-family:Fraunces;font-style:italic;font-size:20px}
 .marquee span{display:inline-block;animation:m 30s linear infinite}
 @keyframes m{to{transform:translateX(-50%)}}
@@ -67,14 +65,19 @@ input,textarea{background:transparent;border:0;border-bottom:1px solid var(--for
 input:focus,textarea:focus{outline:0;border-color:var(--clay)}
 footer{border-top:1px solid var(--line);padding:30px 0;font-size:14px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width:860px){.links{display:none}.hero,.intro,.vals,.promise,.contact{grid-template-columns:1fr}.svc{grid-template-columns:1fr;gap:6px}.promise{padding:36px}.badge{left:12px}section{padding:64px 0}.hero{padding-bottom:60px}}
+@media(max-width:860px){.links{display:none}.hero,.intro,.vals,.promise,.contact{grid-template-columns:1fr}.svc{grid-template-columns:1fr;gap:6px}.promise{padding:36px}section{padding:64px 0}.hero{padding-bottom:60px}}
 .ms{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-left:2px;font-family:inherit}@media(max-width:560px){.ms{display:none}}
+.art .sello{position:absolute;inset:auto;left:72.5%;top:26%;width:34%;height:auto;transform:translate(-50%,-50%);clip-path:none;z-index:1}
+.sello circle:first-of-type{fill:#f3e3b3}
+.sello circle:nth-of-type(2){stroke:#e0c97f}
+.ring{transform-box:view-box;transform-origin:50% 50%;animation:gira 30s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav>
-  <a class="logo" href="#"><svg viewBox="0 0 24 24"><path d="M20 3C10 3 4 8 4 15c0 2 .6 3.600 1.500 5C8 13 12 9 17 7c-4 3-7 7-9 14 8 1 13-5 12-18z"/></svg>Ben Fet <small class="ms">Multiservicios</small></a>
+  <a class="logo" href="#"><img class="bf" src="logo.png" alt="" width="37" height="34" style="height:34px;width:auto;flex:none;display:block;align-self:center">Ben Fet <small class="ms">Multiservicios</small></a>
   <div class="links"><a href="#filosofia">Filosofía</a><a href="#servicios">Servicios</a><a href="#compromiso">Compromiso</a><a href="#contacto">Contacto</a></div>
   <a class="btn" href="#contacto">Reservar</a>
 </nav>
@@ -94,7 +97,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       <path d="M200 270c-45-20-65-65-55-120 45 20 65 65 55 120z" fill="#6f9a6f"/>
       <path d="M0 470c100-40 300-40 400 0v30H0z" fill="#1f3d2b" opacity=".25"/>
     </svg>
-    <div class="badge"><b>10 años</b>cuidando hogares de la zona</div>
+    <svg class="sello" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><circle cx="60" cy="60" r="59" fill="#fbf8f1"/><circle cx="60" cy="60" r="33" fill="none" stroke="#c9d8c0"/><g class="ring"><text font-size="9.5" letter-spacing="2.4" fill="#4f7a52" font-family="DM Sans" font-weight="600"><textPath href="#circ">CUIDANDO HOGARES · DESDE 2014 ·</textPath></text></g><text x="60" y="64" text-anchor="middle" font-family="Fraunces" font-size="28" fill="#1f3d2b">10</text><text x="60" y="78" text-anchor="middle" font-size="9" fill="#6a766e" font-family="DM Sans" letter-spacing="1">AÑOS</text></svg>
   </div>
 </div>
 </div>
